@@ -8,6 +8,14 @@ namespace ddns_update
     {
         static void Main(string[] args)
         {
+            IpDetector detector = new IpDetector(IpDetector.IpDetectionMethod.UPnP);
+
+            while (true)
+            {
+                Console.WriteLine(detector.GetIP());
+                Console.ReadKey();
+            }
+
         }
     }
 }
